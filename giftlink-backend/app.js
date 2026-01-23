@@ -2,6 +2,7 @@
 require('dotenv').config();
 
 const giftRoutes = require('./routes/giftRoutes');
+const searchRoutes = require('./rotues/searchRoutes')
 
 const express = require('express');
 const cors = require('cors');
@@ -14,6 +15,7 @@ const {loadData} = require("./util/import-mongo/index");
 const app = express();
 app.use("*",cors());
 app.use('/api/gifts', giftRoutes);
+app.use('/api/search'. searchRoutes);
 
 const port = 3060;
 
